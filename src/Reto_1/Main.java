@@ -15,6 +15,11 @@ public class Main {
     }
 
     private static boolean esUnAnagrama(String palabra1, String palabra2) {
+
+        if(palabra1.equalsIgnoreCase(palabra2)){
+            return false;
+        }
+
         char []arrayPalabra1 = palabra1.toLowerCase().toCharArray();
         char []arrayPalabra2 = palabra1.toLowerCase().toCharArray();
 
