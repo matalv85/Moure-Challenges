@@ -1,7 +1,7 @@
 package Reto_10;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Stack;
 
     /*
      * Enunciado: Crea un programa que comprueba si los paréntesis, llaves y corchetes de una expresión están equilibrados.
@@ -29,21 +29,21 @@ public class Main {
         symbolRelation.put("]", "[");
         symbolRelation.put("}", "{");
 
-        ArrayList<String> stack = new ArrayList<>();
+        Stack<String> stack = new Stack<>();
 
         for(int i = 0; i < textToCheck.length(); i++) {
             String word = String.valueOf(textToCheck.charAt(i));
 
             if (symbolRelation.containsValue(word)) {
-                stack.add(word);
+                stack.push(word);
 
             } else if (symbolRelation.containsKey(word)) {
 
                 if(stack.isEmpty())
                     return false;
 
-                if (symbolRelation.get(word).equals(stack.get(stack.size() - 1))) {
-                    stack.remove(stack.size() - 1);
+                if (symbolRelation.get(word).equals(stack.peek())) {
+                    stack.pop();
 
                 } else {
                     return false;
