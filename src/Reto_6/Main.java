@@ -8,7 +8,7 @@ public class Main {
     }
 
     public static String reverseWord(String palabra){
-        char []reversedArray = palabra.toCharArray();
+        //char []reversedArray = palabra.toCharArray();
         String reversedWord = "";
         for(int i = palabra.length() - 1; i >= 0; i--){
                 reversedWord = reversedWord + palabra.charAt(i);
